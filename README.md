@@ -1,4 +1,4 @@
-## A weather App built using React 
+# A weather App built using React and  gives current weather details according to city name
 
 
 
