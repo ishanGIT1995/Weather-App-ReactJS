@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Loading from './components/Loading';
 
 function App() {
 
   const [data, setData] = useState({});
   const [location, setLocation] = useState('');
+  const [loading,setLoading]=useState(true)
 
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=009a6578fc1ea13084fb4ce14f22c067`
@@ -23,10 +25,26 @@ function App() {
     
   }
 
+  useEffect(()=>{
+    setLoading(true)
+    setTimeout(()=>{
+      setLoading(false)
+    },5000)
+  },[])
+
 
   return (
-    <div className="App">
+    <>
+    {
+      loading?
 
+      <div>
+        <Loading/>
+      </div>
+
+      :
+
+      <div className="App">
       <h2 id='logo'>My Weather App</h2>
       <div className="search">
         <input
@@ -90,6 +108,8 @@ function App() {
       {/* end of container */}
 
     </div>
+  }
+</>
   );
 }
 

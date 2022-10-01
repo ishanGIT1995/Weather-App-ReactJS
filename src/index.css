@@ -170,6 +170,26 @@ h1 {
   margin-bottom: 1rem;
 }
 
+.loading{
+  margin: 25px;
+  width: 90%;
+  height: 200px;
+  position: relative;
+  
+}
+.animation{
+  width: 200px;
+  height: 200px;
+  /* Center vertically and horizontally */
+  position: absolute;
+  top: 45%;
+  left: 47%;
+  margin: -25px 0 0 -25px;
+  margin-top: 200px;
+  background-color: white;
+  border-radius: 50px;
+}
+
 @media screen and (max-width: 500px) {
 
   .App input[type="text"] {
